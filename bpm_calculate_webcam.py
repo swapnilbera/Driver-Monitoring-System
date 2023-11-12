@@ -16,6 +16,7 @@ minFrequency = 1.0
 maxFrequency = 2.0
 bufferSize = 150
 bufferIndex = 0
+imgPlot = None
 
 mixer.init()
 mixer.music.load("music.wav")
