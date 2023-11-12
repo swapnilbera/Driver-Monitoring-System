@@ -47,6 +47,9 @@ It checks 20 consecutive frames and if the Eye Aspect ratio is less than 0.25, A
 7.Visualize Results: Use CVZone LivePlot to visualize the heart rate estimation results.
 
 ### Results 
+![test result_eye detection](https://github.com/swapnilbera/Driver-Monitoring-System/assets/87073046/45c4b8e4-7a52-4c8b-bb41-52b2f99f9804)
+
+![drowsiness_detection](https://github.com/swapnilbera/Driver-Monitoring-System/assets/87073046/1b025d05-a8df-4809-8887-a9336b469517)
 
 
 ## References 🔱
