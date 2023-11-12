@@ -1,62 +1,55 @@
-# Drowsiness Detection OpenCV 😴 🚫 🚗
+# Driver Drowsiness Detection System
 
-[![](https://img.shields.io/github/license/sourcerer-io/hall-of-fame.svg?colorB=ff0000)](https://github.com/akshaybahadur21/Drowsiness_Detection/blob/master/LICENSE.txt)  [![](https://img.shields.io/badge/Akshay-Bahadur-brightgreen.svg?colorB=ff0000)](https://akshaybahadur.com)
+This code can detect your eyes and alert when the user is drowsy and it monitors heart rate using camera.
 
-This code can detect your eyes and alert when the user is drowsy.
-
-## Applications 🎯
+## Applications 
 This can be used by riders who tend to drive for a longer period of time that may lead to accidents
 
-### Code Requirements 🦄
-The example code is in Python ([version 2.7](https://www.python.org/download/releases/2.7/) or higher will work). 
+### Code Requirements 
+The example code is in Python ([version 3.9.13])
 
-### Dependencies
+### Install all the system requirments by:
+pip install -r requirements.txt
 
-1) import cv2
-2) import imutils
-3) import dlib
-4) import scipy
+### Description 
 
+A computer vision system that can automatically detect driver drowsiness in a real-time video stream and then play an alarm if the driver appears to be drowsy.Here we are also monitoring heart rate in real-time using a webcam.This is based on an algorithm called Eulerian Video Magnification which makes it possible to see the colours of the face change as blood rushes in and out of the head. It is able to detect the pulses and calculates the heart rate in beats per minute (BPM).This method performs well in real-time, providing accurate results and maintaining a good frames-per-second rate, even when using a CPU.
 
-### Description 📌
-
-A computer vision system that can automatically detect driver drowsiness in a real-time video stream and then play an alarm if the driver appears to be drowsy.
-
-### Algorithm 👨‍🔬
+### Algorithm for detecting drowsiness 
 
 Each eye is represented by 6 (x, y)-coordinates, starting at the left-corner of the eye (as if you were looking at the person), and then working clockwise around the eye.
-
 It checks 20 consecutive frames and if the Eye Aspect ratio is less than 0.25, Alert is generated.
 
-<img src="https://github.com/akshaybahadur21/Drowsiness_Detection/blob/master/assets/eye1.jpg">
-
+![eye1](https://github.com/swapnilbera/Driver-Monitoring-System/assets/87073046/e90e97a4-765f-4f6d-8802-a3599132fd32)
 
 #### Relationship
 
-<img src="https://github.com/akshaybahadur21/Drowsiness_Detection/blob/master/assets/eye2.png">
+![eye2](https://github.com/swapnilbera/Driver-Monitoring-System/assets/87073046/e84eeec5-3b91-4255-a548-792585fad939)
 
 #### Summing up
 
-<img src="https://github.com/akshaybahadur21/Drowsiness_Detection/blob/master/assets/eye3.jpg">
+![eye3](https://github.com/swapnilbera/Driver-Monitoring-System/assets/87073046/19830b0a-a263-4c66-9270-0f5d9f40a76d)
 
+### STEPS FOR HEART RATE MONITORING
 
-For more information, [see](https://www.pyimagesearch.com/2017/05/08/drowsiness-detection-opencv/)
+1.Input: Webcam video feed as the input for heart rate measurement.
+   
+2.Preprocessing: Use MediaPipe (CVZone) to detect and localize the face region in the video frames.
 
-### Results 📊
+3.Spatial Decomposition: Decompose the video frames into multiple spatial frequency bands using a pyramid-based approach.
 
-<img src="https://github.com/akshaybahadur21/BLOB/blob/master/drowsy.gif">
+4.Temporal Filtering: Apply band-pass filtering techniques to isolate the desired frequency range associated with the heartbeat.
 
+5.Magnification: Amplify the subtle temporal variations related to the heartbeat for better visibility.
 
-### Execution 🐉
-To run the code, type `python Drowsiness_Detection.py`
+6.Measurement: Extract the amplified signal and estimate the heart rate in beats per minute (bpm) using appropriate signal processing techniques.
 
-```
-python Drowsiness_Detection.py
-```
+7.Visualize Results: Use CVZone LivePlot to visualize the heart rate estimation results.
 
-###### Made with ❤️ and 🦙 by Akshay Bahadur
+### Results 
+
 
 ## References 🔱
  
  -   Adrian Rosebrock, [PyImageSearch Blog](https://www.pyimagesearch.com/2017/05/08/drowsiness-detection-opencv/)
-
+ -   https://people.csail.mit.edu/mrub/evm/
